@@ -1,0 +1,87 @@
+@import "../../../node_modules/awesomplete/awesomplete.css";
+@import "./colorPallette";
+@import "./mixins";
+/**
+ * bootstrap's input groups modify the float & z-index of form-controls, this allows awesomplete
+ * to assume the position of the form-control and reset the input
+ */
+
+.autocomplete-form {
+  text-align: center;
+
+  p {
+    @include font($color333, 30px, 32px, $fontRaleway, 400);
+  }
+
+  .awesomplete {
+    position: relative;
+    z-index: 2;
+    width: 400px;
+    margin: 0 auto;
+    .form-control {
+      border: 1px solid $colorAAA;
+      border-radius: 3px;
+      width: calc(100% - 20px);
+      height: 40px;
+      font-weight: 100;
+      font-size: 26px;
+      padding: 0 10px;
+    }
+    ul {
+      li {
+        @include font($color333, 18px, 32px, $fontRaleway, 400);
+      }
+    }
+  }
+}
+
+
+.tweet-container {
+  width: 400px;
+  margin: 30px auto;
+  .tweet-prompt {
+    border: 1px solid $colorBlue;
+    width: 100%;
+    padding: 10px;
+    width: calc(100% - 20px);
+    @include font($colorAAA, 26px, 28px, $fontRaleway, 400);
+    cursor: pointer;
+  }
+  textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-weight: 100;
+    font-size: 26px;
+    border: 1px solid $colorBlue;
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .submit-btn, .char-left {
+    float: right;
+  }
+
+  .submit-btn {
+    background-color: $colorBlue;
+    @include font($white, 14px, 16px, $fontRaleway, 400);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-left: 10px;
+  }
+
+  .char-left {
+    margin: 5px 0;
+    @include font($color333, 14px, 16px, $fontRaleway, 400);
+  }
+}
+
+.notification-msg {
+  text-align: center;
+  @include font($colorBlue, 18px, 20px, $fontRaleway, 400);
+}
+
+.clear {
+  clear: both;
+}
